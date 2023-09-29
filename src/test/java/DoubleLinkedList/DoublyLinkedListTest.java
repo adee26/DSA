@@ -111,4 +111,25 @@ class DoublyLinkedListTest {
         assertEquals(7, doublyLinkedList.getTail().prev.value);
     }
 
+    @Test
+    void shouldSwapValues() {
+        DoublyLinkedList doublyLinkedList = new DoublyLinkedList(7);
+        doublyLinkedList.append(8);
+        doublyLinkedList.append(9);
+
+        doublyLinkedList.swapFirstAndLast();
+        assertEquals(9, doublyLinkedList.getHead().value);
+        assertEquals(7, doublyLinkedList.getTail().value);
+    }
+
+    @Test
+    void shouldSwapNodes() {
+        DoublyLinkedList doublyLinkedList = new DoublyLinkedList(7);
+        doublyLinkedList.append(8);
+        doublyLinkedList.append(9);
+        doublyLinkedList.append(10);
+
+        doublyLinkedList.swapNodesInPairs();
+    }
+
 }

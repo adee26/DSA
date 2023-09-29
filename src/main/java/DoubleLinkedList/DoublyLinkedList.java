@@ -1,10 +1,22 @@
 package DoubleLinkedList;
 
 public class DoublyLinkedList {
-    class Node {
+    public class Node {
         int value;
         Node next;
         Node prev;
+
+        public int getValue() {
+            return value;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public Node getPrev() {
+            return prev;
+        }
 
         Node(int value) {
             this.value = value;
@@ -204,6 +216,43 @@ public class DoublyLinkedList {
 
         return nodeToRemove;
     }
+
+    public void swapFirstAndLast() {
+        if(length < 2) {
+            return;
+        }
+        int firstValue = head.value;
+
+        head.value = tail.value;
+        tail.value = firstValue;
+    }
+
+    public void swapNodesInPairs() {
+        if (length < 1) {
+            return;
+        }
+
+        Node tempHead = head;
+        Node tempHeadNext = head.next;
+
+        for (int i = 0; i<length-1; i++) {
+            Node temp = tempHead;
+            tempHead.next = tempHeadNext.next;
+            tempHead.prev = tempHeadNext;
+
+            tempHeadNext.next.prev = tempHead;
+            if(temp.prev != null){
+                tempHeadNext.prev = temp.prev;
+            }
+            tempHeadNext.next = tempHead;
+
+            tempHead = tempHeadNext.next.next;
+            tempHeadNext = tempHeadNext.next.next;
+        }
+
+        // 2-><-1-><-3-><-4 //TODO
+    }
+
 
     public void setHead(Node head) {
         this.head = head;
