@@ -1,6 +1,6 @@
 package linkedlist;
 
-import DoubleLinkedList.DoublyLinkedList;
+import doubleLinkedList.DoublyLinkedList;
 
 public class CheckPalindrome {
 
