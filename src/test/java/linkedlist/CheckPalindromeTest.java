@@ -1,6 +1,6 @@
 package linkedlist;
 
-import doubleLinkedList.DoublyLinkedList;
+import doublelinkedlist.DoublyLinkedList;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

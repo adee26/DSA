@@ -1,4 +1,4 @@
-package doubleLinkedList;
+package doublelinkedlist;
 
 import org.junit.jupiter.api.Test;
 
